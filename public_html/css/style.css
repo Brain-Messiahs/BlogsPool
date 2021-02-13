@@ -1,0 +1,334 @@
+
+ol,ul{list-style:none;margin:0px;padding:0px;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+
+.center-container {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+   
+    padding: 0;}
+/*--header--*/
+.header-w3l {
+    padding: 3em 0;
+}
+.header-w3l h1{
+	font-size:3em;
+    color:#fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.header-w3l h1 span {
+    font-weight: 800;
+}
+/*--//header--*/
+
+/*--main--*/
+.main-content-agile {
+    margin: 0 auto;
+    width: 32%;
+}
+.wthree-pro {
+    background:rgba(0, 0, 0, 0.52);
+    background: rgba(44, 201, 144, 0.5);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.wthree-pro h2 {
+    font-size: 1.7em;
+    text-transform: capitalize;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 1em 0;
+}
+.sub-main-w3{
+	position:relative;
+	padding: 2em 0 1em;
+}
+
+.sub-main-w3 input[type="text"],.sub-main-w3 input[type="email"],.sub-main-w3 input[type="tel"], .sub-main-w3 input[type="password"] {
+    outline: none;
+    font-size: .9em;
+    border: none;
+    border: 1px dotted #fff;
+    background: #fff;
+    width: 91%;
+    color: #333;
+    padding: 1em 0 1em 3em;
+    letter-spacing: 1px;
+	margin-bottom: 1em;
+	font-family: 'Raleway', sans-serif;
+}
+.sub-main-w3 input[type="password"]{
+	margin-top: 0em;
+}
+.sub-main-w3 input[type="submit"] {
+    color: #fff;
+    background: #db3552;
+    border: none;
+    padding: .7em 4em;
+    outline: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    letter-spacing: 1px;
+	margin-top: 0.5em;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	font-family: 'Raleway', sans-serif;
+}
+.sub-main-w3 input[type="submit"]:hover {
+    background: #2CC990;
+}
+
+.rem-w3 {
+    margin:2em 0 2.5em;
+}
+span.check-w3 {
+    float: left;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+.sub-main-w3 a {
+    color: #fff;
+    float: right;
+    font-size: 1em;
+}   
+/*--//main--*/
+
+/*--//footer--*/
+/*--responsive--*/
+@media(max-width: 1440px){
+	.header-w3l h1 {
+		font-size: 2.8em;
+	}
+	.wthree-pro h2 {
+		font-size: 1.5em;
+	}	
+}
+@media(max-width: 1366px){
+	.sub-main-w3 input[type="text"], .sub-main-w3 input[type="email"], .sub-main-w3 input[type="tel"], .sub-main-w3 input[type="password"] {
+		width: 90%;
+	}
+}
+@media(max-width: 1280px){
+	.main-content-agile {
+		width: 33%;
+	}
+	
+}
+@media(max-width: 1080px){
+	.header-w3l h1 {
+		font-size: 2.6em;
+	}
+	.wthree-pro h2 {
+		font-size: 1.4em;
+	}
+	.main-content-agile {
+		width: 38%;
+	}
+	.sub-main-w3 input[type="text"], .sub-main-w3 input[type="email"], .sub-main-w3 input[type="tel"], .sub-main-w3 input[type="password"] {
+		width: 88%;
+	}
+}
+@media(max-width: 1024px){
+	.header-w3l {
+		padding: 2em 0;
+	}
+	.footer {
+		padding: 2.5em 0;
+	}
+	
+}
+@media(max-width: 991px){
+	.header-w3l h1 {
+		font-size: 2.5em;
+		letter-spacing: 3px;
+	}
+}
+@media(max-width: 900px){
+	
+	.main-content-agile {
+		width: 42%;
+	}
+}
+@media(max-width: 800px){
+	.header-w3l h1 {
+		font-size: 2.2em;
+	}
+	.main-content-agile {
+		width: 48%;
+		
+	}
+}
+@media(max-width: 768px){
+	.header-w3l {
+		padding: 3em 0;
+	}
+	.main-content-agile {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+@media(max-width: 736px){
+	.header-w3l {
+		padding: 2em 0;
+	}
+	.footer {
+		padding: 2.5em 0;
+	}	
+}
+@media(max-width: 667px){
+	.wthree-pro h2 {
+		font-size: 1.35em;
+	}
+	.main-content-agile {
+		width: 68%;
+	}
+	.header-w3l h1 {
+		letter-spacing: 2px;
+	}
+}
+@media(max-width: 640px){
+	.main-content-agile {
+		width: 75%;
+	}
+	.footer p {
+		letter-spacing: 1px;
+	}
+}
+@media(max-width: 600px){
+	.header-w3l h1 {
+		font-size: 2.1em;
+	}
+	.wthree-pro h2 {
+		font-size: 1.3em;
+	}
+	.main-content-agile {
+		width: 76%;
+	}
+	.sub-main-w3 input[type="submit"] {
+		padding: .7em 3em;
+	}
+}
+@media(max-width: 568px){
+	.header-w3l h1 {
+		font-size: 1.9em;
+	}
+	.footer p {
+		line-height: 1.9;
+	}
+	.footer {
+		padding: 2em 0;
+	}
+}
+@media(max-width: 480px){
+	.header-w3l h1 {
+		font-size: 2em;
+	}
+	.main-content-agile {
+		width: 80%;
+	}
+	.footer {
+		padding: 2em 1em;
+	}
+	.sub-main-w3 input[type="submit"] {
+		padding: .7em 2em;
+		font-size: 1em;
+	}
+}
+@media(max-width: 414px){
+	.header-w3l h1 {
+		font-size: 1.7em;
+		line-height: 1.3em;
+	}
+	.wthree-pro h2 {
+		font-size: 1.2em;
+	}
+	span.check-w3 {
+		font-size: .9em;
+	}
+	.sub-main-w3 a {
+		font-size: .9em;
+	}
+	.footer p {
+		font-size: 0.9em;
+	}
+	.header-w3l {
+		padding: 2em 0;
+	}
+	.sub-main-w3 input[type="text"], .sub-main-w3 input[type="email"], .sub-main-w3 input[type="tel"], .sub-main-w3 input[type="password"] {
+		width: 85%;
+		font-size: .875em;
+	}
+	
+}
+@media(max-width: 384px){
+	.header-w3l h1 {
+		font-size: 1.6em;
+		letter-spacing: 1px;
+	}
+	.header-w3l {
+		padding: 1.5em 0;
+	}
+	.main-content-agile {
+		width: 85%;
+	}
+}
+@media(max-width: 375px){
+	.wthree-pro h2 {
+		font-size: 1.1em;
+	}
+	.sub-main-w3 input[type="email"], .sub-main-w3 input[type="password"] {
+		font-size: 0.9em;
+	}
+	.sub-main-w3 input[type="submit"] {
+		font-size: .9em;
+	}
+	
+}
+@media(max-width: 320px){
+	.header-w3l h1 {
+		font-size: 1.4em;
+		padding: 0em .5em;
+	}
+	.wthree-pro h2 {
+		font-size: .9em;
+		padding: 0.8em 0;
+	}
+	.sub-main-w3 a {
+		font-size: .85em;
+	}
+	.rem-w3 {
+		margin: 2em 0 2em;
+	}
+	.social-icons ul li a.fa {
+		font-size: 0.8em;
+	}
+	.sub-main-w3 input[type="text"], .sub-main-w3 input[type="email"], .sub-main-w3 input[type="tel"], .sub-main-w3 input[type="password"] {
+		font-size: .8em;
+		padding: .8em 0 .8em 3em;
+	}
+	
+}
+/*--//responsive--*/
