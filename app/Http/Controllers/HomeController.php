@@ -29,29 +29,50 @@ use DB;
 use Carbon\Carbon;
 use DateTime;
 
+
 class homecontroller extends Controller
 {   
 	
-    public function index()
-    {  $articles = article::where(['active'=>'1'])->orderBy('id', 'DESC')->paginate(10);
-       $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
-       $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->get();
+    public function index(Request $request)
+    { 
+        if($request->has('search')and$request->get('search')!=''){
+            $m_search = $request->get('search');
+            $m_find = article::where('tags','like', '%'.$m_search.'%')
+            ->orwhere('title','like', '%'.$m_search.'%')
+            ->orwhere('description','like', '%'.$m_search.'%')
+            ->orwhere('author_name','like', '%'.$m_search.'%')
+            ->orwhere('category_name','like', '%'.$m_search.'%');
+            $articles = $m_find->where(['active'=>'1'])->orderBy('id','desc')->paginate(10);
+            $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
+            $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
        
-        return view('index',compact('articles','categories','most_visited'));  
+            return view('index',compact('articles','categories','most_visited'));
+        }
+        else{
+            $articles = article::where(['active'=>'1'])->orderBy('id', 'DESC')->paginate(10);
+            $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
+            $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
+       
+            return view('index',compact('articles','categories','most_visited'));
+        }
     }
 
      public function contact()
     {  
         $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
-        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->get();
+        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
         
         return view('contact',compact('categories','most_visited'));
     }
 
      public function detail_blog(Request $request)
-    {   $article = article::where(['active'=>'1','id'=>$request->get('blog')])->get();
+    {
+        $article = article::find($request->get('blog'));
+        $article->clicks=$article->clicks+1;
+        $article->save();
+        $article = article::where(['active'=>'1','id'=>$request->get('blog')])->get();
         $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
-        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(3);
+        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
         $tags = explode (",", $article[0]->tags);  
         $query = article::where(['active'=>'1','id'=>'0']);
 
@@ -68,14 +89,14 @@ class homecontroller extends Controller
         $new_category = category::where(['active'=>'1','id'=>$request->get('category_id')])->get();
         $articles = article::where(['active'=>'1','category_id'=>$new_category[0]['id']])->orderBy('id', 'DESC')->paginate(10);
         $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
-        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->get();
+        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
         return view('category',compact('new_category','articles','categories','most_visited'));
     }
 
      public function about()
     {  
        $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
-       $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->get();
+       $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
         return view('about',compact('categories','most_visited'));
     }
     
@@ -118,3 +139,4 @@ class homecontroller extends Controller
         return redirect()->route('thank_you');
     }
 }
+

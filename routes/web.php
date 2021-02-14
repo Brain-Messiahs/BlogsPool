@@ -19,7 +19,6 @@
      Route::get('/contact', 'homecontroller@contact')->name('contact');
      Route::get('/about', 'homecontroller@about')->name('about');
      Route::get('/events', 'homecontroller@events')->name('events');
-    
      
 
 

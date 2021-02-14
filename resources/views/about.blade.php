@@ -1,5 +1,9 @@
 @extends('main');
 
+@section('title')
+About-Us
+@endsection
+
 @section('page')
 	
 <header class="page-header">
