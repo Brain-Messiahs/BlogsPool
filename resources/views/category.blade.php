@@ -1,5 +1,8 @@
-
 @extends('main');
+
+@section('title')
+Category
+@endsection
 
 @section('page')
 	

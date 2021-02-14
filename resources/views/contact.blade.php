@@ -1,4 +1,7 @@
 @extends('main');
+@section('title')
+Contact
+@endsection
 
 @section('page')
 

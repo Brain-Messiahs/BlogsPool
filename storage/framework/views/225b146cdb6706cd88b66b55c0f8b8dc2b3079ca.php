@@ -59,4 +59,12 @@
 </div>
 <?php $__env->stopSection(); ?>
 
+
+<?php $__env->startSection('js'); ?>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layout/vendor_dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

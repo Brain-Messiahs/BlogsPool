@@ -29,7 +29,7 @@
 							       @foreach($images as $c)
 								
 									<div class="card " style="width: 22rem; border:  solid #363636bd; margin: 5 ; display: inline-block;">
-  									<img width="330" height="200" class="attachment-full size-full wp-post-image md card-img-top" alt="" loading="lazy" srcset="{{$c->url}}" sizes="(max-width: 1280px) 100vw, 1280px"/>
+  									<img width="330" height="200" class="attachment-full size-full wp-post-image md card-img-top" alt="" loading="lazy" srcset="/{{$c->url}}" sizes="(max-width: 1280px) 100vw, 1280px"/>
   									<div class="card-body">
 									
 									<input type="text" value="{{$c->url}}" id="copy_{{ $c->id }}" class='copyfrom' tabindex='-1' aria-hidden='true'>

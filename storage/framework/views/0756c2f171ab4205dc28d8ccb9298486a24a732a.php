@@ -1,5 +1,9 @@
 ;
 
+<?php $__env->startSection('title'); ?>
+Category
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('page'); ?>
 	
 		<header class="page-header">

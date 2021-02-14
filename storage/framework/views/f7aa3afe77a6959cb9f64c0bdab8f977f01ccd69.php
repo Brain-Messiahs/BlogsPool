@@ -6,17 +6,10 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="pingback" href="xmlrpc.php">
     
-	<title>Blogspool - Something you should know</title>
+	<title><?php echo $__env->yieldContent('title'); ?></title>
 	<meta name="description" content="Blogspool is a blog website where you can find every type of blogs related your need." />
-	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<link rel="canonical" href="index.html" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Blogspool - Something you should know" />
-	<meta property="og:description" content="Blogspool is a blog website where you can find every type of blogs related your need." />
-	<meta property="og:url" content="index.html" />
-	<meta property="og:site_name" content="Blogs Pool" />
 	<meta name="twitter:card" content="summary_large_image" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://blogspool.site/#website","url":"https://blogspool.site/","name":"Blogs Pool","description":"Something you should know","potentialAction":[{"@type":"SearchAction","target":"https://blogspool.site/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"CollectionPage","@id":"https://blogspool.site/#webpage","url":"https://blogspool.site/","name":"Blogspool - Something you should know","isPartOf":{"@id":"https://blogspool.site/#website"},"description":"Blogspool is a blog website where you can find every type of blogs related your need.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://blogspool.site/"]}]}]}</script>
 	<meta name="google-site-verification" content="h-ZPyUmVVULVODwKUaziSIeOT1CgrToD5ZaPMLsmntA" />
 
@@ -66,9 +59,13 @@ body::-webkit-scrollbar-thumb {
 <script type='text/javascript' src='wp-includes/js/jquery/jquery.min9d52.js?ver=3.5.1' id='jquery-core-js'></script>
 <script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
 <link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 5.6" />
 <meta name="generator" content="Everest Forms 1.7.2.2" />
+<link rel='shortlink' href='index5721.html?p=201' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed4e26.json?url=https%3A%2F%2Fblogspool.site%2Fpubg-mobile-india%2F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed64fc?url=https%3A%2F%2Fblogspool.site%2Fpubg-mobile-india%2F&amp;format=xml" />
         <script type="text/javascript">
             (function () {
                 window.lae_fs = {can_use_premium_code: false};
@@ -113,7 +110,7 @@ body::-webkit-scrollbar-thumb {
 					}
 				})();
 			</script>
-		               
+		  <link rel="pingback" href="xmlrpc.php">       
     <style>
         body{
             color: #404040;
@@ -214,6 +211,94 @@ body::-webkit-scrollbar-thumb {
             border: none;
 }
 
+
+.searchBox .searchForm{
+    position:relative;
+    display:inline-block;
+    height:33px;
+    
+    border-radius:17px;
+    
+
+}
+.searchForm input#searchField{
+    cursor: pointer;
+    position:relative;
+    padding:0px 8px;
+    width:20px;
+    height: 25px;
+    background:transparent;
+    font-family: sans-serif,helvetica;
+    font-size: 15px;
+    border-radius: 30px;
+    border: 3px solid #fd6e70;
+    outline: thin;
+    line-height:0px;
+    vertical-align:top;
+    z-index:100;
+    -moz-transition: width .4s cubic-bezier(0.17, 0.78, 0.32, 1.32);
+    -webkit-transition: width .4s cubic-bezier(0.17, 0.78, 0.32, 1.32); 
+    transition: width .4s cubic-bezier(0.17, 0.78, 0.32, 1.32); 
+}
+.searchForm input#searchField:focus{
+    margin-right:50px;
+    width:200px;
+    outline:none;
+     color: #fff;
+}
+.searchForm .close{
+    position:absolute;
+    width:30px;
+    height:30px;
+    top:25px;
+    right:20px;
+    z-index:1
+    cursor: pointer;   
+    -moz-transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+}
+
+.searchForm .close span{
+    position:absolute;
+    display:block;
+    width:16px;
+    height:4px;
+    top:10px;
+    right:-13px;
+    background-color: white;
+    border-radius:5px;
+    -moz-transition: .2s .5s ease-in-out;
+    -webkit-transition: .2s .5s ease-in-out ;
+    transition: .2s .5s ease-in-out;    
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);    
+}
+.searchForm .close span.back{
+    top:100px;
+    right:5px;
+    opacity:0;
+
+}
+.searchForm input#searchField:focus + .close span{
+    top:5px;
+    right:5px;
+}
+
+.searchForm input#searchField:focus + .close span.back{
+    opacity:1;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-45deg);
+    -moz-transition: .4s .8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -webkit-transition: .4s .8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: .4s .8s cubic-bezier(0.18, 0.89, 0.32, 1.28);    
+}
+
+
+
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -246,11 +331,6 @@ body::-webkit-scrollbar-thumb {
 </head>
 
 
-
-
-
-
-
 <body class="home blog everest-forms-no-js hfeed sticky-top elementor-default elementor-kit-6">
 	<div id="page" class="site">
 		<header id="masthead" class="site-header navbar-fixed-top" role="banner">
@@ -270,6 +350,21 @@ body::-webkit-scrollbar-thumb {
   </div>
 </div></li>
 
+<li>
+    
+
+<div class="searchForm" style="margin-top: 15px; float:right;">
+      <form action="<?php echo e(route('index')); ?>" method="get">
+        <input id="searchField" type="text" name="search" value="<?php echo e(app('request')->input('search')); ?>"  placeholder="Search here"/>    
+        <div class="close">
+            <span class="front"></span>
+            <span class="back"></span>
+        </div>  </form> 
+    </div>  
+
+
+</li>
+
                     </ul>
                 </div>           
             </nav>
@@ -278,24 +373,13 @@ body::-webkit-scrollbar-thumb {
             </div><!-- .container -->
          </header><!-- #masthead -->       
 
-         <!-- <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div> -->
-
-    
-
 
          <div class="main-banner banner-enabled overlay-enabled" style="background-image: url(wp-content/uploads/2020/11/cropped-home-2-slider-bg5035.jpg);">
             <div class="container">
                 <div class="row">
                     <div class="site-branding">
                         
-                            <h2 class="site-title"><a href="index.html" rel="home">Blogs Pool</a></h2>
+                            <h2 class="site-title"><a href="<?php echo e(route('index')); ?>" rel="home">Blogs Pool</a></h2>
                            
                             
                                 <h3 class="site-description">Something you should know</h3>
@@ -312,16 +396,8 @@ body::-webkit-scrollbar-thumb {
                 <div class="col-md-8 col-sm-12 layout-right-sidebar main-content-area">
                 <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
-    
-
-<!--
  
-    YAHA CHALEGA FOR EACH LOOP SARA DATA LANE KE LIYE
-
--->
 <?php echo $__env->yieldContent('page'); ?>
-
-
 
 
 </main><!-- #main -->
@@ -382,16 +458,44 @@ body::-webkit-scrollbar-thumb {
 
 </div><!-- #page -->
 
+
+<script src="<?php echo e(asset('admin_css/js/jquery-2.1.4.min.js')); ?>"></script>
+<script src="<?php echo e(asset('admin_css/js/bootstrap.min.js')); ?>"></script>
 <a href="#page" class="scrollup" id="btn-scrollup"><i class="fa fa-angle-up"></i></a>	<script type="text/javascript">
 		var c = document.body.className;
 		c = c.replace( /everest-forms-no-js/, 'everest-forms-js' );
 		document.body.className = c;
 	</script>
+
+
 	<script type='text/javascript' id='leadin-script-loader-js-js-extra'>
 /* <![CDATA[ */
 var leadin_wordpress = {"userRole":"visitor","pageType":"home","leadinPluginVersion":"7.48.63"};
 /* ]]> */
 </script>
+
+<script type="text/javascript">
+
+    $('#searchField').keydown(function(e){
+    if (e.keyCode === 13) { // If Enter key pressed
+        $(this).trigger('submit');
+    }
+});
+
+</script>
+
+
+<script type="text/javascript">$(".search-btn").click(function(){
+  $(".search-input").toggleClass("active").focus;
+  $(this).toggleClass("animate");
+  $(".input").val("");
+});</script>
+
+
+<?php echo $__env->yieldContent('js'); ?>
+
+
+
 <script async defer id="hs-script-loader" type='text/javascript' src='js.hs-scripts.com/9016502a466.js?integration=WordPress' id='leadin-script-loader-js-js'></script>
 <script type='text/javascript' src='wp-content/themes/blog-way/assets/js/skip-link-focus-fix8740.js?ver=20161202' id='blog-way-skip-link-focus-fix-js'></script>
 <script type='text/javascript' src='wp-content/themes/blog-way/assets/third-party/bootstrap/bootstrap.min8740.js?ver=20161202' id='bootstrap-js'></script>
@@ -403,4 +507,15 @@ var leadin_wordpress = {"userRole":"visitor","pageType":"home","leadinPluginVers
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'sg2plcpnl0090'}) 
 </script>
 <script src='img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+<script type="text/javascript">
+    function desc(){
+        $('.content_description').html($('.content_description').data("data"));
+//   $('.content_description').each(function(e) {
+//   $(this).html($(this).data("data"));
+
+// });
+}
+  desc();
+</script>
+
 </html>

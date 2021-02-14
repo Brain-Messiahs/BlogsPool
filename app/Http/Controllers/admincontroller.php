@@ -225,10 +225,9 @@ class admincontroller extends Controller
          $file = new image_file();
          $image = $request->file('img');
          $name = time().uniqid(rand()).'.'.$image->getClientOriginalExtension();
-         $destinationPath = base_path().'/public_html/admin/images';
          $image_resize = Image::make($image->getRealPath());              
          $image_resize->resize(1280, 720);
-         $image_resize->save(base_path().'/public_html/admin/images/'.$name);
+         $image_resize->save(base_path().'/public_html/images/'.$name);
          $img='images/'.$name; 
          $file->url = $img;
 
@@ -236,7 +235,7 @@ class admincontroller extends Controller
                   $file->author_name = 'Admin';
                   $file->active=1;
                   $file->save();
-                return back();
+                return redirect()->route('image_list');
     }
 
 
