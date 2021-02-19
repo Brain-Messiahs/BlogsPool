@@ -20,6 +20,7 @@ class AuthorLoginController extends Controller
     |
     */
  
+    
     use AuthenticatesUsers;
 
     /**

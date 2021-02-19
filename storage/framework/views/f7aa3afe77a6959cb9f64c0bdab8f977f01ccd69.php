@@ -414,17 +414,40 @@ body::-webkit-scrollbar-thumb {
 		<h3 class="widget-title">Most Visited Posts</h3>
 		<ul>
                    <?php $__currentLoopData = $most_visited; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                   
 											<li>
 					<a href="<?php echo e(route('detail_blog',['blog'=>$mv->id])); ?>"><?php echo e($mv->title); ?></a>
 									</li>
-
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                
 		</section>
 
         <section id="archives-3" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
-			<ul>
-					<li><a href="<?php echo e(route('index')); ?>">December 2020</a></li>
-			</ul>
+			
+        <form method="POST" action="<?php echo e(route('archive')); ?>" >
+        <?php echo csrf_field(); ?>
+            <select name="month" id="month">
+	<option value="none" selected="selected"> -- Month --
+	<option value="01">January
+	<option value="02">February
+    <option value="03">March
+    <option value="04">April
+    <option value="05">May
+    <option value="06">June
+    <option value="07">July
+    <option value="08">August
+    <option value="09">September
+    <option value="10">October
+    <option value="11">November
+    <option value="12">December
+           </select>
+           <select name="year" id="year">
+	<option value="none" selected="selected"> -- Year --
+	<option value="2021">2021
+	<option value="2020">2020
+           </select>
+    <input type="submit" value="Submit">
+    </form>
+
 			</section>
         
 

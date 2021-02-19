@@ -19,6 +19,7 @@
      Route::get('/contact', 'homecontroller@contact')->name('contact');
      Route::get('/about', 'homecontroller@about')->name('about');
      Route::get('/events', 'homecontroller@events')->name('events');
+     Route::post('/archive','homecontroller@archive')->name('archive');
      
 
 
@@ -140,4 +141,39 @@
        Route::get('/delete_order', 'admincontroller@delete_order')->name('admin-delete_order');
      });
 
+     Route::prefix('/author')->group(function() {
+      Route::get('/', 'Auth\AuthorLoginController@showLoginForm');
+      Route::get('login', 'Auth\AuthorLoginController@showLoginForm')->name('author-form');
+      Route::post('login', 'Auth\AuthorLoginController@attemptlogin')->name('author-login');
+      Route::get('logout', 'Auth\AuthorLoginController@logout')->name('author-logout');
+
+      Route::get('/dashboard', 'authorcontroller@index')->name('author-dashboard');
+
+      Route::get('/profile', 'authorcontroller@profile')->name('author-profile');
+      Route::POST('/edit_profile_submit', 'authorcontroller@edit_profile_submit')->name('author-edit_profile_submit');
+      Route::get('/change_password', 'authorcontroller@change_password')->name('author-change_password');
+      Route::POST('/change_password_submit', 'authorcontroller@change_password_submit')->name('author-change_password_submit');
+      Route::get('/profile', 'authorcontroller@profile')->name('author-profile');
+      Route::POST('/edit_profile_submit', 'authorcontroller@edit_profile_submit')->name('author-edit_profile_submit');
+
+      Route::get('/image', 'authorcontroller@image')->name('image_list');
+      Route::get('/add_image', 'authorcontroller@add_image')->name('author-add_image');
+      Route::POST('/add_image_submit', 'authorcontroller@add_image_submit')->name('author-add_image_submit');
+      Route::get('/delete_image', 'authorcontroller@delete_image')->name('author-delete_image');
+      Route::get('/image_copy_address', 'authorcontroller@image_copy_address')->name('author-copy_address');
+      
+
+
+      Route::get('/article', 'authorcontroller@article')->name('article');
+      Route::get('/add_article', 'authorcontroller@add_article')->name('author-add_article');
+      Route::POST('/add_article_submit', 'authorcontroller@add_article_submit')->name('author-add_article_submit');
+      Route::get('/delete_article', 'authorcontroller@delete_article')->name('author-delete_article');
+      Route::get('/edit_article', 'authorcontroller@edit_article')->name('author-edit_article');
+      Route::POST('/edit_article_submit', 'authorcontroller@edit_article_submit')->name('author-edit_article_submit');
+      Route::get('/article_details', 'authorcontroller@article_details')->name('author-article_details');
+      Route::get('/article_details_load', 'authorcontroller@article_details_load')->name('author-article_details_load');
+      Route::get('/upload_image_list', 'authorcontroller@upload_image_list')->name('author-upload_image_list');
+      Route::POST('/ckeditor_upload', 'authorcontroller@ckeditor_upload')->name('author-ckeditor_upload');
+      Route::POST('/upload_image_submit', 'authorcontroller@upload_image_submit')->name('author-upload_image_submit');  
+    });
   

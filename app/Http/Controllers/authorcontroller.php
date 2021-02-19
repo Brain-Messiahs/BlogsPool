@@ -46,7 +46,8 @@ class authorcontroller extends Controller
       return view('author.profile');
     }
 
-
+   
+    
 
 
 

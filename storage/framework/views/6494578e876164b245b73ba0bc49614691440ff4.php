@@ -15,9 +15,9 @@ Blogspool - Something you should know
        </div>
        	<div class="detail-wrap">
 		<header class="entry-header">
-			<span class="cat-links"><a href="<?php echo e(route('index')); ?>" rel="category tag"><?php echo e($ar->category_name); ?></a></span><h2 class="entry-title"><a href="" rel="bookmark"><?php echo e($ar->title); ?></a></h2>
+			<span class="cat-links"><a  rel="category tag"><?php echo e($ar->category_name); ?></a></span><h2 class="entry-title"><a href="" rel="bookmark"><?php echo e($ar->title); ?></a></h2>
 				<div class="author-date">
-											<span class="author vcard"><a class="url fn n" href="author/admin/index.html">admin</a></span>
+											<span class="author vcard"><a class="url fn n" >admin</a></span>
 					
 											<span class="separator"> / </span>
 					

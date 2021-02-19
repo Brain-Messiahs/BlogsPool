@@ -12,9 +12,9 @@
 
     <div class="detail-wrap">
         <header class="entry-header">
-            <span class="cat-links"><a href="" rel="category tag">{{$ar->category_name}}</a></span><h1 class="entry-title">{{$ar->title}}</h1>
+            <span class="cat-links"><a  rel="category tag">{{$ar->category_name}}</a></span><h1 class="entry-title">{{$ar->title}}</h1>
                 <div class="author-date">
-                                            <span class="author vcard"><a class="url fn n" href="author/admin/index.html">Admin</a></span>
+                                            <span class="author vcard"><a class="url fn n" >Admin</a></span>
                     
                                             <span class="separator"> / </span>
                     
@@ -41,9 +41,9 @@
                         <header class="page-header">
                             <h2 class="page-title">Related Posts</h2>       </header><!-- .page-header -->
                                 @foreach($related_articles as $ra)
-                                @if($ra->id != $ar->id)
+                                @if($ra->id != $ar->id && $ra->active == 1)
                                 <div class="container" style="display: inline-block;">
-                                <div class="card " style="width: 27rem; margin: 10 ; display: inline-block;">
+                                <div onclick="location.href='{{ route('detail_blog',['blog'=>$ra->id]) }}';" style="cursor: pointer; width: 27rem; margin: 10 ; display: inline-block;" class="card " >
                                           <img width="330" height="300" class="attachment-full size-full wp-post-image md card-img-top" alt="" loading="lazy" srcset="{{$ra->image}}" sizes="(max-width: 1280px) 100vw, 1280px"/>
                                           <div class="card-body">
                                           <h5 class="card-title">{{$ra->title}}</h5>

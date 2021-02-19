@@ -100,7 +100,16 @@ class homecontroller extends Controller
         return view('about',compact('categories','most_visited'));
     }
     
-
+    public function archive(Request $request)
+    {
+        
+        $post = article::whereYear('created_at', '=', $request->year)
+              ->whereMonth('created_at', '=', $request->month)
+              ->get();
+        $categories = category::where(['active'=>'1'])->orderBy('id','DESC')->get(); 
+        $most_visited = article::where(['active'=>'1'])->orderBy('clicks','DESC')->paginate(5);
+        return view('archive',compact('categories','most_visited','post'));
+    }
 
 
 
